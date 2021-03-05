@@ -5,7 +5,7 @@ public class HotelRoomReservation {
         setLakeWood();
         setRidgeWood();
     }
-    Scanner scanner =new Scanner(System.in);
+    
     private static HashMap<String, List<Integer>> lakeWood = new HashMap<>();
     private static HashMap<String, List<Integer>> bridgeWood = new HashMap<>();
     private static HashMap<String, List<Integer>> ridgeWood = new HashMap<>();
