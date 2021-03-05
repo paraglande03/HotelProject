@@ -13,43 +13,40 @@ public class HotelRoomReservation {
 
 
 
-    public  void setLakeWood() {
+    public  static  List<Integer> setLakeWood() {
 
 
-        List<Integer> lakeWoodRegular = new ArrayList<>();
-        lakeWoodRegular.add(110);
-        lakeWoodRegular.add(90);
+        List<Integer> lakeWoodRegular = Arrays.asList(110,90);
+
 
 
         lakeWood.put("Regular", lakeWoodRegular);
 
-
+        return lakeWoodRegular;
     }
 
-    public static  void setBridgeWood() {
+    public static List<Integer> setBridgeWood() {
 
 
-        List<Integer> bridgeWoodRegular = new ArrayList<>();
-        bridgeWoodRegular.add(160);
-        bridgeWoodRegular.add(60);
+        List<Integer> bridgeWoodRegular = Arrays.asList(160,60);
+
 
 
         bridgeWood.put("Regular", bridgeWoodRegular);
-
+        return bridgeWoodRegular;
     }
 
-    public void setRidgeWood() {
+    public static  List<Integer> setRidgeWood() {
 
 
-        List<Integer> ridgeWoodRegular = new ArrayList<>();
-        ridgeWoodRegular.add(220);
-        ridgeWoodRegular.add(150);
+         List<Integer> ridgeWoodRegular = Arrays.asList(220,150);
+
 
 
 
         ridgeWood.put("Regular" , ridgeWoodRegular);
-        System.out.println();
 
+            return ridgeWoodRegular;
     }
     public void printRates(){
         System.out.println("Prices for regular customers weekdays / weekends resp.");
@@ -57,27 +54,49 @@ public class HotelRoomReservation {
         System.out.println("Bridgewood Prices:- "+bridgeWood.entrySet());
         System.out.println("Ridgewood Prices:- "+ridgeWood.entrySet());
     }
-    public static void findCheap() {
 
 
+    public static void getTotalRate(){
+        System.out.println("enter no of days to stay");
+        Scanner scanner=new Scanner(System.in);
+        int noOfDays= scanner.nextInt();
+        System.out.println("Enter choice of weekdays of weekends:- 1.weekdays 2. weekends");
 
-        System.out.println("Enter choice to find prices for : 1.WeekDays  2. WeekEnds");
-        Scanner scanner =new Scanner(System.in);
-        int switchno =scanner.nextInt();
+        int choice = scanner.nextInt();
 
-        switch (switchno){
+        switch (choice) {
 
             case 1:
-                System.out.println("Lakewood is cheaper for weekdays");
+                if (Integer.valueOf(setLakeWood().get(0)) <= Integer.valueOf(setBridgeWood().get(0)) && Integer.valueOf(setLakeWood().get(0)) <= Integer.valueOf(setRidgeWood().get(0))) {
+                    System.out.println("lakewood is cheaper with price of : " + (Integer.valueOf(setLakeWood().get(0))) * noOfDays + "$");
+
+                } else if (Integer.valueOf(setBridgeWood().get(0)) <= Integer.valueOf(setLakeWood().get(0)) && Integer.valueOf(setBridgeWood().get(0)) <= Integer.valueOf(setRidgeWood().get(0))) {
+
+                    System.out.println("Bridgewood is cheaper with price of : " + (Integer.valueOf(setBridgeWood().get(0))) * noOfDays + "$");
+                } else {
+                    System.out.println("Ridgewood is cheaper with price of : " + (Integer.valueOf(setRidgeWood().get(0))) * noOfDays + "$");
+
+                }
+
                 break;
             case 2:
-                System.out.println("Bridgewood is cheaper for weekends");
+                if (Integer.valueOf(setLakeWood().get(1)) <= Integer.valueOf(setBridgeWood().get(1)) && Integer.valueOf(setLakeWood().get(1)) <= Integer.valueOf(setRidgeWood().get(1))) {
+                    System.out.println("lakewood is cheaper with price of : " + (Integer.valueOf(setLakeWood().get(1))) * noOfDays + "$");
+
+                } else if (Integer.valueOf(setBridgeWood().get(1)) <= Integer.valueOf(setLakeWood().get(1)) && Integer.valueOf(setBridgeWood().get(1)) <= Integer.valueOf(setRidgeWood().get(1))) {
+
+                    System.out.println("Bridgewood is cheaper with price of : " + (Integer.valueOf(setBridgeWood().get(1))) * noOfDays + "$");
+                } else {
+                    System.out.println("Ridgewood is cheaper with price of : " + (Integer.valueOf(setRidgeWood().get(1))) * noOfDays + "$");
+
+                }
+
                 break;
             default:
                 System.out.println("Enter valid choice");
 
 
+        }
     }
+}
 
-
-}}
