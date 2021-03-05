@@ -1,5 +1,6 @@
 import java.util.*;
 public class HotelRoomReservation {
+
     public HotelRoomReservation(){
         setBridgeWood();
         setLakeWood();
@@ -12,7 +13,7 @@ public class HotelRoomReservation {
 
 
 
-    public static void setLakeWood() {
+    public  void setLakeWood() {
 
 
         List<Integer> lakeWoodRegular = new ArrayList<>();
@@ -25,7 +26,7 @@ public class HotelRoomReservation {
 
     }
 
-    public void setBridgeWood() {
+    public static  void setBridgeWood() {
 
 
         List<Integer> bridgeWoodRegular = new ArrayList<>();
@@ -56,4 +57,27 @@ public class HotelRoomReservation {
         System.out.println("Bridgewood Prices:- "+bridgeWood.entrySet());
         System.out.println("Ridgewood Prices:- "+ridgeWood.entrySet());
     }
-}
+    public static void findCheap() {
+
+
+
+        System.out.println("Enter choice to find prices for : 1.WeekDays  2. WeekEnds");
+        Scanner scanner =new Scanner(System.in);
+        int switchno =scanner.nextInt();
+
+        switch (switchno){
+
+            case 1:
+                System.out.println("Lakewood is cheaper for weekdays");
+                break;
+            case 2:
+                System.out.println("Bridgewood is cheaper for weekends");
+                break;
+            default:
+                System.out.println("Enter valid choice");
+
+
+    }
+
+
+}}
