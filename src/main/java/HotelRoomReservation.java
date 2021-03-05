@@ -6,7 +6,7 @@ public class HotelRoomReservation {
         setLakeWood();
         setRidgeWood();
     }
-    
+//    maps for hotels and prices
     private static HashMap<String, List<Integer>> lakeWood = new HashMap<>();
     private static HashMap<String, List<Integer>> bridgeWood = new HashMap<>();
     private static HashMap<String, List<Integer>> ridgeWood = new HashMap<>();
@@ -94,7 +94,6 @@ public class HotelRoomReservation {
                 break;
             default:
                 System.out.println("Enter valid choice");
-
 
         }
     }
